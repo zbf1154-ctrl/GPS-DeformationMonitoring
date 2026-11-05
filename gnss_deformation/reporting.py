@@ -146,7 +146,7 @@ def markdown_summary(analysis: StationAnalysis) -> str:
         f"- **数据**：`{data.source.name}`，{data.n_used} 个历元，{lo:.4f}–{hi:.4f}\n"
         f"- **预处理**：原始 {data.n_raw} 行，剔除/去重 {data.dropped_rows} 行；"
         f"坐标由 m 换算为 mm，并以 {data.reference_epoch:.4f} 历元为参考归零\n"
-        f"- **估计方法**：{'加权' if analysis.config.weighted else '等权'}最小二乘，模型 {model_label}\n"
+        f"- **估计方法**：{'加权' if analysis.config.weighted else '等权'}最小二乘，模型{model_label}\n"
     )
     parts.append("\n## 参数估计\n\n")
     parts.append(_table_markdown(table))
