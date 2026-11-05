@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gnss-deformation"
+dynamic = ["version"]
+description = "GNSS coordinate time-series deformation analysis: secular trend, seasonal terms, co-seismic offset and post-seismic relaxation."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "zbf1154-ctrl" }]
+keywords = [
+    "GNSS",
+    "GPS",
+    "deformation-monitoring",
+    "geodesy",
+    "earthquake",
+    "time-series",
+    "post-seismic",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: GIS",
+]
+dependencies = [
+    "numpy>=1.23",
+    "pandas>=2.0",
+    "scipy>=1.9",
+    "matplotlib>=3.6",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4"]
+
+[project.scripts]
+gnss-deformation = "gnss_deformation.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/zbf1154-ctrl/GPS-DeformationMonitoring"
+Issues = "https://github.com/zbf1154-ctrl/GPS-DeformationMonitoring/issues"
+
+[tool.setuptools]
+packages = ["gnss_deformation"]
+
+[tool.setuptools.dynamic]
+version = { attr = "gnss_deformation._version.__version__" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

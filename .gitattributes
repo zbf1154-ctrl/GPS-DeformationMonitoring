@@ -1,0 +1,7 @@
+# 统一换行符：仓库内保存 LF，检出时按平台转换
+* text=auto
+
+# 二进制文件不做换行转换
+*.png binary
+*.xlsx binary
+*.ico binary

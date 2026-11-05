@@ -1,0 +1,8 @@
+# 运行依赖
+numpy>=1.23
+pandas>=2.0
+scipy>=1.9
+matplotlib>=3.6
+
+# 开发/测试依赖（可选）
+# pytest>=7.4
